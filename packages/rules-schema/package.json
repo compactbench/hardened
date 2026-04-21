@@ -1,0 +1,7 @@
+{
+  "name": "@hardened/rules-schema",
+  "version": "0.0.0-placeholder",
+  "description": "[v3 — reserved slot] Cross-layer schema consistency rules for hardened. Not implemented yet.",
+  "license": "Apache-2.0",
+  "private": true
+}

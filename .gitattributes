@@ -1,0 +1,27 @@
+# Normalize line endings. Enforces LF on commit regardless of platform.
+* text=auto eol=lf
+
+# Explicit text files (make intent clear for contributors)
+*.ts        text eol=lf
+*.tsx       text eol=lf
+*.js        text eol=lf
+*.mjs       text eol=lf
+*.cjs       text eol=lf
+*.json      text eol=lf
+*.jsonc     text eol=lf
+*.yml       text eol=lf
+*.yaml      text eol=lf
+*.md        text eol=lf
+*.toml      text eol=lf
+*.sh        text eol=lf
+*.ps1       text eol=crlf
+
+# Lockfiles: text with LF endings, but mark as generated so GitHub collapses
+# them in PR diffs. Earlier we tried `-text` (binary) which prevented line-
+# ending normalization and confused pnpm's YAML parser on CI runners.
+pnpm-lock.yaml   text eol=lf linguist-generated=true
+package-lock.json text eol=lf linguist-generated=true
+yarn.lock        text eol=lf linguist-generated=true
+
+# Mark generated files so GitHub collapses them in PR diffs
+CHANGELOG.md    linguist-generated=true

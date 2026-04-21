@@ -1,0 +1,8 @@
+blank_issues_enabled: false
+contact_links:
+  - name: Ask a question
+    url: https://github.com/compactbench/hardened/discussions
+    about: Please use GitHub Discussions for usage questions.
+  - name: Security concern
+    url: https://github.com/compactbench/hardened/security/advisories/new
+    about: Report vulnerabilities privately via a Security Advisory.

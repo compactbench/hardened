@@ -1,0 +1,6 @@
+[
+  { "ruleId": "risk/http-no-timeout", "severity": "error" },
+  { "ruleId": "risk/http-no-timeout", "severity": "error" },
+  { "ruleId": "risk/floating-promise", "severity": "warning" },
+  { "ruleId": "risk/floating-promise", "severity": "warning" }
+]

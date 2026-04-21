@@ -1,0 +1,7 @@
+{
+  "name": "@hardened/rules-config",
+  "version": "0.0.0-placeholder",
+  "description": "[v2 — reserved slot] Config externalization rules for hardened. Not implemented yet.",
+  "license": "Apache-2.0",
+  "private": true
+}

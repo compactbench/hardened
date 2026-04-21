@@ -1,0 +1,6 @@
+[
+  { "ruleId": "risk/http-no-timeout", "severity": "error" },
+  { "ruleId": "risk/http-no-timeout", "severity": "error" },
+  { "ruleId": "risk/http-no-timeout", "severity": "error" },
+  { "ruleId": "risk/http-no-timeout", "severity": "error" }
+]

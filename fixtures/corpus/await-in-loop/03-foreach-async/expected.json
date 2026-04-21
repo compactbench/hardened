@@ -1,0 +1,4 @@
+[
+  { "ruleId": "risk/fetch-no-abort-signal", "severity": "warning" },
+  { "ruleId": "risk/await-in-loop", "severity": "warning" }
+]

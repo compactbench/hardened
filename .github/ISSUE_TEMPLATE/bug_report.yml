@@ -1,0 +1,59 @@
+name: Bug report
+description: Report a correctness or behavior issue with hardened.
+labels: [bug]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Thanks for filing a bug. Please include enough detail to reproduce the issue locally.
+
+  - type: textarea
+    id: what-happened
+    attributes:
+      label: What happened?
+      description: What did you run, and what did hardened do?
+    validations:
+      required: true
+
+  - type: textarea
+    id: expected
+    attributes:
+      label: What did you expect?
+    validations:
+      required: true
+
+  - type: textarea
+    id: minimal-repro
+    attributes:
+      label: Minimal reproduction
+      description: A code snippet that triggers the issue, or a link to a public repo.
+      render: typescript
+    validations:
+      required: true
+
+  - type: input
+    id: hardened-version
+    attributes:
+      label: hardened version
+      placeholder: 0.1.0
+    validations:
+      required: true
+
+  - type: input
+    id: node-version
+    attributes:
+      label: Node version
+      placeholder: 20.11.1
+    validations:
+      required: true
+
+  - type: dropdown
+    id: os
+    attributes:
+      label: Operating system
+      options:
+        - Linux
+        - macOS
+        - Windows
+    validations:
+      required: true

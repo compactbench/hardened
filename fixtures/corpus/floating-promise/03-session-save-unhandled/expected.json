@@ -1,0 +1,4 @@
+[
+  { "ruleId": "risk/floating-promise", "severity": "warning" },
+  { "ruleId": "risk/floating-promise", "severity": "warning" }
+]

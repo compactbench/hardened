@@ -1,0 +1,99 @@
+# ---------- OS ----------
+.DS_Store
+Thumbs.db
+desktop.ini
+$RECYCLE.BIN/
+
+# ---------- Editors ----------
+.vscode/*
+!.vscode/settings.json
+!.vscode/extensions.json
+.idea/
+*.swp
+*.swo
+*~
+
+# ---------- Editor / tool caches ----------
+.claude/
+CLAUDE.md
+CLAUDE.local.md
+.cursorrules
+.cursor/
+.cursorignore
+.aider*
+.codex*
+.continue/
+.windsurf/
+.codeium/
+.github/copilot-instructions.md
+.ai/
+.ai-chat/
+mcp.json
+mcp-config.json
+.mcp.json
+
+# ---------- Node / JS / TS ----------
+node_modules/
+.next/
+.turbo/
+.nuxt/
+.svelte-kit/
+out/
+.pnpm-store/
+.yarn/*
+!.yarn/releases
+!.yarn/plugins
+!.yarn/sdks
+!.yarn/versions
+.pnp.*
+*.tsbuildinfo
+dist/
+build/
+
+# ---------- Env & secrets (NEVER commit) ----------
+.env
+.env.*
+!.env.example
+*.pem
+*.key
+*.crt
+*.p12
+secrets/
+credentials/
+.aws/
+.gcloud/
+.azure/
+
+# ---------- Logs ----------
+*.log
+logs/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+lerna-debug.log*
+pnpm-debug.log*
+
+# ---------- Internal docs (not published) ----------
+docs/internal/
+
+# ---------- Local-only notes ----------
+NOTES.private.md
+TODO.private.md
+SCRATCH.private.md
+*.private.md
+*.private/
+.identity
+.personal/
+
+# ---------- Test artifacts ----------
+coverage/
+.nyc_output/
+*.tar.gz
+*.zip
+
+# ---------- Scan output ----------
+*.sarif
+scan-output/
+scan-results/
+/PRIVATE/
+/corpus*/

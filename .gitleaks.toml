@@ -1,0 +1,60 @@
+title = "hardened gitleaks config"
+
+[extend]
+useDefault = true
+
+[[rules]]
+id = "local-path-1"
+regex = '''(?i)[C-Zc-z]:[\\\/]+Users[\\\/]+CEO[\\\/]+'''
+tags = ["private", "leak"]
+
+[[rules]]
+id = "tool-config-1"
+regex = '''(?i)[\\\/\.]claude[\\\/](settings|projects|memory|skills|hooks|agents|keybindings|plugins)'''
+tags = ["private", "leak"]
+
+[[rules]]
+id = "tool-config-2"
+regex = '''(?i)(Users[\\\/][^\\\/\s"']+|home[\\\/][^\\\/\s"']+)[\\\/]\.claude[\\\/]'''
+tags = ["private", "leak"]
+
+[[rules]]
+id = "tool-config-3"
+regex = '''(?i)CLAUDE(\.local)?\.md'''
+tags = ["private", "leak"]
+
+[[rules]]
+id = "tool-config-4"
+regex = '''mcp__[A-Za-z0-9_-]+__[A-Za-z0-9_-]+'''
+tags = ["private", "leak"]
+
+[[rules]]
+id = "tool-config-5"
+regex = '''(?i)(\.cursorrules|\.cursor[\\\/]|\.cursorignore)'''
+tags = ["private", "leak"]
+
+[[rules]]
+id = "tool-config-6"
+regex = '''(?i)\.aider[._-]?(chat\.history|conf|input|tags)?'''
+tags = ["private", "leak"]
+
+[[rules]]
+id = "tool-config-7"
+regex = '''(?i)(\.windsurf[\\\/]|\.codeium[\\\/])'''
+tags = ["private", "leak"]
+
+[[rules]]
+id = "attribution-1"
+regex = '''(?im)^(Co-Authored-By:\s*(Claude|ChatGPT|Copilot|Cursor|Aider|Codeium|Gemini))'''
+tags = ["private", "leak"]
+
+[allowlist]
+paths = [
+  '''\.gitleaks\.toml''',
+  '''\.gitleaksignore''',
+  '''\.gitignore''',
+  '''node_modules[\\\/]''',
+  '''\.git[\\\/]''',
+  '''pnpm-lock\.yaml''',
+  '''\.changeset[\\\/]''',
+]

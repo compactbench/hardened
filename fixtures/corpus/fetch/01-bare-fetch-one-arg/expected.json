@@ -1,0 +1,3 @@
+[
+  { "ruleId": "risk/fetch-no-abort-signal", "severity": "warning" }
+]

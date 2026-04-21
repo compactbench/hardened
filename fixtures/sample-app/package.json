@@ -1,0 +1,15 @@
+{
+  "name": "@fixtures/sample-app",
+  "version": "0.0.0",
+  "private": true,
+  "description": "Fixture codebase used to demo and test hardened. Contains intentionally unsafe external calls.",
+  "license": "Apache-2.0",
+  "type": "module",
+  "dependencies": {
+    "axios": "^1.7.0"
+  },
+  "devDependencies": {
+    "@types/node": "^20.10.0",
+    "typescript": "^5.4.0"
+  }
+}

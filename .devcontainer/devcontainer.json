@@ -1,0 +1,31 @@
+{
+  "name": "hardened",
+  "image": "mcr.microsoft.com/devcontainers/typescript-node:1-20-bookworm",
+  "features": {
+    "ghcr.io/devcontainers/features/github-cli:1": {},
+    "ghcr.io/devcontainers/features/common-utils:2": {}
+  },
+  "customizations": {
+    "vscode": {
+      "extensions": [
+        "dbaeumer.vscode-eslint",
+        "esbenp.prettier-vscode",
+        "vitest.explorer",
+        "editorconfig.editorconfig",
+        "unifiedjs.vscode-mdx",
+        "yzhang.markdown-all-in-one"
+      ],
+      "settings": {
+        "editor.formatOnSave": true,
+        "editor.tabSize": 2,
+        "typescript.tsdk": "node_modules/typescript/lib",
+        "files.eol": "\n"
+      }
+    }
+  },
+  "postCreateCommand": "corepack enable && pnpm install && pre-commit install || true",
+  "remoteUser": "node",
+  "mounts": [
+    "source=${localWorkspaceFolderBasename}-node_modules,target=${containerWorkspaceFolder}/node_modules,type=volume"
+  ]
+}

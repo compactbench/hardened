@@ -1,0 +1,58 @@
+{
+  "name": "@hardened/rules-risk",
+  "version": "0.1.0",
+  "description": "Production reliability risk rules for hardened — detect and auto-fix HTTP calls without timeouts, fetch without AbortSignal, floating promises, and more.",
+  "license": "Apache-2.0",
+  "type": "module",
+  "main": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "import": "./dist/index.js"
+    }
+  },
+  "files": ["dist", "README.md", "LICENSE"],
+  "sideEffects": false,
+  "keywords": [
+    "hardened",
+    "resilience",
+    "timeout",
+    "retry",
+    "circuit-breaker",
+    "production-readiness",
+    "axios",
+    "fetch",
+    "reliability"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/compactbench/hardened.git",
+    "directory": "packages/rules-risk"
+  },
+  "bugs": {
+    "url": "https://github.com/compactbench/hardened/issues"
+  },
+  "homepage": "https://github.com/compactbench/hardened/tree/main/packages/rules-risk#readme",
+  "author": "hardened contributors",
+  "engines": {
+    "node": ">=20"
+  },
+  "scripts": {
+    "build": "tsc -p tsconfig.json",
+    "typecheck": "tsc --noEmit",
+    "prepublishOnly": "npm run build"
+  },
+  "dependencies": {
+    "@hardened/core": "workspace:*",
+    "ts-morph": "^22.0.0"
+  },
+  "devDependencies": {
+    "@types/node": "^20.10.0",
+    "typescript": "^5.4.0"
+  },
+  "publishConfig": {
+    "access": "public",
+    "provenance": true
+  }
+}

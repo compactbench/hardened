@@ -1,0 +1,57 @@
+name: Rule proposal
+description: Propose a new rule for hardened.
+labels: [rule-proposal]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Rule proposals are reviewed against three criteria: determinism, false-positive risk, and fit with hardened's local-transform design principles (zero/near-zero config, safe to auto-apply).
+
+  - type: input
+    id: rule-id
+    attributes:
+      label: Proposed rule ID
+      description: "Format: category/kebab-case-name. Example: risk/graphql-no-timeout"
+      placeholder: category/kebab-case-name
+    validations:
+      required: true
+
+  - type: textarea
+    id: problem
+    attributes:
+      label: Problem
+      description: What production-reliability or correctness issue does this rule address?
+    validations:
+      required: true
+
+  - type: textarea
+    id: detection
+    attributes:
+      label: Detection strategy
+      description: What AST patterns does the rule match? Include before/after examples.
+      render: typescript
+    validations:
+      required: true
+
+  - type: textarea
+    id: fix-strategy
+    attributes:
+      label: Fix strategy
+      description: Is there a deterministic auto-fix? If not, explain why and propose finding-only.
+      render: typescript
+
+  - type: textarea
+    id: false-positive-risk
+    attributes:
+      label: False-positive risk
+      description: When might this rule fire incorrectly? How can we reduce that risk?
+    validations:
+      required: true
+
+  - type: checkboxes
+    id: determinism
+    attributes:
+      label: Determinism check
+      options:
+        - label: The proposed fix produces byte-identical output for identical input.
+          required: true

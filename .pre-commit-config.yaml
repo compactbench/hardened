@@ -1,0 +1,38 @@
+repos:
+  - repo: local
+    hooks:
+      - id: verify-commit-email
+        name: Verify commit email
+        entry: bash scripts/verify-commit-email.sh
+        language: system
+        pass_filenames: false
+        stages: [pre-commit]
+        always_run: true
+
+  - repo: https://github.com/pre-commit/pre-commit-hooks
+    rev: v5.0.0
+    hooks:
+      - id: trailing-whitespace
+        exclude: 'pnpm-lock\.yaml|package-lock\.json|yarn\.lock'
+      - id: end-of-file-fixer
+        exclude: 'pnpm-lock\.yaml|package-lock\.json|yarn\.lock'
+      - id: check-yaml
+        exclude: 'pnpm-lock\.yaml'
+      - id: check-json
+      - id: check-toml
+      - id: check-added-large-files
+        args: ['--maxkb=2000']
+      - id: detect-private-key
+      - id: check-merge-conflict
+      - id: mixed-line-ending
+        args: ['--fix=lf']
+        exclude: 'pnpm-lock\.yaml|package-lock\.json|yarn\.lock|\.ps1$'
+
+  - repo: local
+    hooks:
+      - id: commitlint
+        name: Validate commit message (conventional-commits)
+        entry: pnpm exec commitlint --edit
+        language: system
+        stages: [commit-msg]
+        pass_filenames: false

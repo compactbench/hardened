@@ -1,0 +1,5 @@
+[
+  { "ruleId": "risk/fetch-no-abort-signal", "severity": "warning" },
+  { "ruleId": "risk/fetch-no-abort-signal", "severity": "warning" },
+  { "ruleId": "risk/fetch-no-abort-signal", "severity": "warning" }
+]

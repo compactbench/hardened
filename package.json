@@ -1,0 +1,40 @@
+{
+  "name": "hardened-workspace",
+  "version": "0.1.0",
+  "private": true,
+  "description": "Monorepo for hardened — find and fix unbounded TypeScript I/O before it ships.",
+  "license": "Apache-2.0",
+  "type": "module",
+  "packageManager": "pnpm@9.15.9",
+  "engines": {
+    "node": ">=20",
+    "pnpm": ">=9"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/compactbench/hardened.git"
+  },
+  "bugs": {
+    "url": "https://github.com/compactbench/hardened/issues"
+  },
+  "homepage": "https://github.com/compactbench/hardened#readme",
+  "scripts": {
+    "build": "pnpm -r build",
+    "test": "vitest run",
+    "test:watch": "vitest",
+    "test:coverage": "vitest run --coverage",
+    "lint": "pnpm -r lint",
+    "typecheck": "pnpm -r typecheck",
+    "benchmark:ci": "node benchmarks/perf/gate.mjs",
+    "docs:rules": "pnpm -r build && node scripts/gen-rules-md.mjs",
+    "verify-commit-email": "bash scripts/verify-commit-email.sh",
+    "commitlint": "commitlint --edit"
+  },
+  "devDependencies": {
+    "@commitlint/cli": "^19.5.0",
+    "@commitlint/config-conventional": "^19.5.0",
+    "@vitest/coverage-v8": "^2.1.0",
+    "typescript": "^5.4.0",
+    "vitest": "^2.1.0"
+  }
+}

@@ -1,0 +1,83 @@
+name: CI
+
+on:
+  pull_request:
+  push:
+    branches: [main]
+
+concurrency:
+  group: ci-${{ github.workflow }}-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  build-test:
+    name: Build & Test
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v6
+
+      - name: Setup pnpm
+        uses: pnpm/action-setup@v6
+        with:
+          version: 9.15.9
+
+      - name: Setup Node
+        uses: actions/setup-node@v6
+        with:
+          node-version: '20'
+          cache: 'pnpm'
+
+      - name: Install
+        run: pnpm install --frozen-lockfile
+
+      - name: Typecheck (after build so workspace deps resolve)
+        run: pnpm -r build && pnpm -r typecheck
+
+      - name: Test
+        run: pnpm test
+
+      - name: Performance gate (1k synthetic files)
+        run: pnpm benchmark:ci
+
+      - name: Dogfood (scan hardened's own source)
+        run: node packages/cli/dist/bin.js risk scan --cwd .
+
+      - name: Verify docs/RULES.md is in sync with rule metadata
+        run: |
+          node scripts/gen-rules-md.mjs
+          if ! git diff --exit-code docs/RULES.md; then
+            echo "::error::docs/RULES.md is out of date. Run 'pnpm docs:rules' locally and commit the result."
+            exit 1
+          fi
+
+  commitlint:
+    name: Commit messages
+    runs-on: ubuntu-latest
+    if: github.event_name == 'pull_request'
+    timeout-minutes: 5
+    steps:
+      - uses: actions/checkout@v6
+        with:
+          fetch-depth: 0
+
+      - name: Setup pnpm
+        uses: pnpm/action-setup@v6
+        with:
+          version: 9.15.9
+
+      - name: Setup Node
+        uses: actions/setup-node@v6
+        with:
+          node-version: '20'
+          cache: 'pnpm'
+
+      - name: Install
+        run: pnpm install --frozen-lockfile
+
+      - name: Validate commit messages
+        run: |
+          pnpm exec commitlint \
+            --from ${{ github.event.pull_request.base.sha }} \
+            --to ${{ github.event.pull_request.head.sha }} \
+            --verbose

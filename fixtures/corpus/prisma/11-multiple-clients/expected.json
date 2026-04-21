@@ -1,0 +1,4 @@
+[
+  { "ruleId": "risk/prisma-no-timeout", "severity": "error" },
+  { "ruleId": "risk/prisma-no-timeout", "severity": "error" }
+]

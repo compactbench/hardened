@@ -1,0 +1,1 @@
+[{ "ruleId": "risk/db-no-query-timeout", "severity": "error" }]
