@@ -47,7 +47,8 @@ interface SarifResult {
   }>
 }
 
-const TOOL_VERSION = "0.1.0"
+import { CLI_VERSION } from "../version.js"
+
 const TOOL_URI = "https://github.com/compactbench/hardened"
 
 export interface SarifReporterOptions {
@@ -131,7 +132,7 @@ export function buildSarif(opts: SarifReporterOptions): SarifLog {
         tool: {
           driver: {
             name: "hardened",
-            version: TOOL_VERSION,
+            version: CLI_VERSION,
             informationUri: TOOL_URI,
             rules: [...ruleMap.values()],
           },

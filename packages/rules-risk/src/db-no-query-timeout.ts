@@ -87,7 +87,7 @@ export const dbNoQueryTimeout: Rule = {
         },
       ],
       addImports: [{ from: "hardened-runtime", names: ["resilient"] }],
-      addDependencies: [{ name: "hardened-runtime", version: "^0.1.0" }],
+      addDependencies: [{ name: "hardened-runtime", version: "^0.1.2" }],
     }
   },
 }

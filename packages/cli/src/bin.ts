@@ -4,10 +4,11 @@ import { riskCommand } from "./commands/risk.js"
 import { configStub } from "./commands/config.js"
 import { schemaStub } from "./commands/schema.js"
 import { initCommand } from "./commands/init.js"
+import { CLI_VERSION } from "./version.js"
 
 const program = new Command("hardened")
   .description("Find and fix unbounded TypeScript I/O before it ships.")
-  .version("0.1.0")
+  .version(CLI_VERSION)
 
 program.addCommand(initCommand)
 program.addCommand(riskCommand)

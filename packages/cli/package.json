@@ -1,6 +1,6 @@
 {
   "name": "hardened",
-  "version": "0.1.1",
+  "version": "0.1.2",
   "description": "Deterministic CLI that finds unbounded TypeScript I/O and applies reviewable timeout fixes.",
   "license": "Apache-2.0",
   "type": "module",

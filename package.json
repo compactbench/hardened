@@ -1,6 +1,6 @@
 {
   "name": "hardened-workspace",
-  "version": "0.1.0",
+  "version": "0.1.2",
   "private": true,
   "description": "Monorepo for hardened — find and fix unbounded TypeScript I/O before it ships.",
   "license": "Apache-2.0",

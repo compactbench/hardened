@@ -5,6 +5,13 @@ All notable changes to hardened will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [0.1.2] — 2026-04-21
+
+### Fixed
+
+- `--version` output and SARIF `tool.driver.version` now match the installed package version.
+- Auto-fix declares `hardened-runtime@^0.1.2`.
+
 ## [0.1.1] — 2026-04-21
 
 ### Fixed
@@ -67,4 +74,6 @@ Each rule is documented in `docs/errors/<rule-id>.md` with a before/after exampl
 - CI regression gate: 1k-file scan must complete under 2× the tracked baseline
 - 267 tests, vitest, all passing on Node 20
 
+[0.1.2]: https://github.com/compactbench/hardened/releases/tag/v0.1.2
+[0.1.1]: https://github.com/compactbench/hardened/releases/tag/v0.1.1
 [0.1.0]: https://github.com/compactbench/hardened/releases/tag/v0.1.0
