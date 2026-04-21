@@ -34,7 +34,7 @@
     "@commitlint/cli": "^19.5.0",
     "@commitlint/config-conventional": "^19.5.0",
     "@vitest/coverage-v8": "^2.1.0",
-    "typescript": "^5.4.0",
+    "typescript": "^6.0.3",
     "vitest": "^2.1.0"
   }
 }
