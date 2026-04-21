@@ -1,6 +1,6 @@
 {
   "name": "hardened-runtime",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "Runtime primitives for code transformed by hardened. Provides `resilient()` — a timeout/retry/circuit-breaker wrapper built on cockatiel.",
   "license": "Apache-2.0",
   "type": "module",
